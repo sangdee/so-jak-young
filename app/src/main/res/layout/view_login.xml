@@ -1,16 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#aabbcc"
+    android:layout_gravity="center"
+    tools:context = ".core.view.LoginView">
 
-    <TextView
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="#000000"
-        android:text="Login View">
-    </TextView>
+        android:orientation="vertical"
+        tools:context=".activities.LoginActivity">
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"/>
+
+        <kr.ac.jbnu.se.stkim.util.TypeWriterView
+            android:id="@+id/typeWriterView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="23sp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="50dp">
+            <EditText
+                android:id="@+id/loginView_edittext_id"
+                android:hint="아이디"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp">
+            <EditText
+                android:id="@+id/loginView_edittext_password"
+                android:hint="패스워드"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+        <CheckBox
+            android:id="@+id/id_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 저장" />
+
+        <TextView
+            android:text="로그인"
+            android:id="@+id/loginView_button_login"
+            android:layout_width="match_parent"
+            android:background="#00000000"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="회원가입"
+            android:id="@+id/loginVeiw_button_signup"
+            android:layout_width="match_parent"
+            android:background="#00000000"
+            android:textSize="20sp"
+            android:paddingTop="20dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

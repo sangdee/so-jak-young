@@ -1,6 +1,5 @@
 package com.cbnu.sjy_.core.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.base.BaseAcitivity;

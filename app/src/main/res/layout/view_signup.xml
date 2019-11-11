@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="#aabbcc"
+    tools:context=".core.view.SignUpView"
+    android:orientation="vertical">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        tools:context=".activities.SignupActivity"
+        android:orientation="vertical">
+
+        <kr.ac.jbnu.se.stkim.util.TypeWriterView
+            android:id="@+id/typeWriterView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <ImageView
+
+            android:id="@+id/signupActivity_imageview_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="40dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/signupActivity_edittext_email"
+                android:hint="이메일"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </android.support.design.widget.TextInputLayout><android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/signupActivity_edittext_name"
+            android:hint="이름"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/signupActivity_edittext_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="패스워드" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:text="회원가입"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:layout_marginTop="15dp"
+            android:background="#00000000"
+            android:id="@+id/signupActivity_button_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</FrameLayout>

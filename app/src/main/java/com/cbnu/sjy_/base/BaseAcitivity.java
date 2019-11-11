@@ -3,8 +3,8 @@ package com.cbnu.sjy_.base;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import com.cbnu.sjy_.R;
 
 /**

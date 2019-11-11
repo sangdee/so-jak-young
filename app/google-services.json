@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "69439824033",
+    "firebase_url": "https://sojakyoung.firebaseio.com",
+    "project_id": "sojakyoung",
+    "storage_bucket": "sojakyoung.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69439824033:android:0d4eafcb38ea35ba0e50e0",
+        "android_client_info": {
+          "package_name": "com.cbnu.sjy_"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69439824033-jj02msnqnjrhg77hs2c64cj981pl94as.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cbnu.sjy_",
+            "certificate_hash": "f738729a0d77e28440172a6fb926ecc3dcaf33c5"
+          }
+        },
+        {
+          "client_id": "69439824033-tvt7t7l8805kpfp37cqaujd9qfai1dvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNIuBbqsm7raOkuCsITuOHenSVJxmudTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69439824033-tvt7t7l8805kpfp37cqaujd9qfai1dvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
