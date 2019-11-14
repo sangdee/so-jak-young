@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".core.view.MainView"
+    tools:showIn="@layout/view_main">
+
+    <FrameLayout
+        android:id="@+id/fragmentBorC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="40sp"
+        android:text="Main"
         android:textColor="#000000"
-        android:text="Main" />
+        android:textSize="40sp" />
+
+    <fragment
+        android:id="@+id/fragmentA"
+        class="com.cbnu.sjy_.core.view.fragmentView.FragmentA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Switch Fragment"
+        android:textSize="20sp" />
 
 
 </LinearLayout>
