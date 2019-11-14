@@ -31,36 +31,32 @@
             android:layout_marginTop="40dp"
             android:layout_gravity="center"/>
 
-        <kr.ac.jbnu.se.stkim.util.TypeWriterView
+        <com.cbnu.sjy_.util.TypeWriter
             android:id="@+id/typeWriterView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textSize="23sp" />
+            android:textSize="23sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="50dp">
+
             <EditText
                 android:id="@+id/loginView_edittext_id"
                 android:hint="아이디"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+
             <EditText
                 android:id="@+id/loginView_edittext_password"
                 android:hint="패스워드"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-        </android.support.design.widget.TextInputLayout>
+
         <CheckBox
             android:id="@+id/id_save"
             android:layout_width="wrap_content"

@@ -3,11 +3,14 @@ package com.cbnu.sjy_.core.view;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.base.BaseAcitivity;
 import com.cbnu.sjy_.util.TypeWriter;
@@ -22,12 +25,12 @@ import com.google.firebase.auth.FirebaseUser;
  * @when : 2019-11-08 오전 12:35
  * @homepage : https://github.com/sangji11
  */
-public class LoginView<View> extends BaseAcitivity {
+public class LoginView extends BaseAcitivity {
     private EditText id;
     private EditText password;
     private CheckBox id_save;
-    private android.view.View login;
-    private android.view.View signup;
+    private View login;
+    private View signup;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
     String shared = "file";
@@ -68,7 +71,7 @@ public class LoginView<View> extends BaseAcitivity {
 
         }
 
-        login.setOnClickListener(new android.view.View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
                 findViewById(R.id.progressBar).setVisibility(android.view.View.VISIBLE);
@@ -153,4 +156,4 @@ public class LoginView<View> extends BaseAcitivity {
         firebaseAuth.removeAuthStateListener(authStateListener);
     }
 }
-}
+

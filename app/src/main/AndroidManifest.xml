@@ -14,11 +14,12 @@
         <activity android:name=".core.view.SplashView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".core.view.LoginView" />
+        <activity android:name=".core.view.MainView"/>
+        <activity android:name=".core.view.SignUpView"/>
     </application>
 
 </manifest>

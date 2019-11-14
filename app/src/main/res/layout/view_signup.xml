@@ -3,36 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:background="#aabbcc"
-    tools:context=".core.view.SignUpView"
-    android:orientation="vertical">
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".core.view.SignUpView">
 
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:visibility="gone"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        tools:context=".activities.SignupActivity"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".activities.SignupActivity">
 
-        <kr.ac.jbnu.se.stkim.util.TypeWriterView
+        <com.cbnu.sjy_.util.TypeWriter
             android:id="@+id/typeWriterView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:layout_marginTop="80dp"
             android:layout_gravity="center"
+            android:layout_marginTop="80dp"
             android:gravity="center"
-            />
+            android:textSize="25sp" />
 
         <ImageView
 
@@ -42,49 +41,40 @@
             android:layout_margin="40dp"
             android:src="@drawable/ic_launcher_background" />
 
-        <android.support.design.widget.TextInputLayout
+        <EditText
+            android:id="@+id/signupActivity_edittext_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/signupActivity_edittext_email"
-                android:hint="이메일"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="이메일" />
 
-        </android.support.design.widget.TextInputLayout><android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <EditText
             android:id="@+id/signupActivity_edittext_name"
-            android:hint="이름"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="이름" />
 
-    </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <EditText
+            android:id="@+id/signupActivity_edittext_password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="패스워드"
+            android:inputType="textPassword" />
 
-            <EditText
-                android:id="@+id/signupActivity_edittext_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="패스워드" />
-
-        </android.support.design.widget.TextInputLayout>
 
         <TextView
-            android:text="회원가입"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textSize="25sp"
-            android:layout_marginTop="15dp"
-            android:background="#00000000"
             android:id="@+id/signupActivity_button_signup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:text="회원가입"
+            android:textSize="25sp" />
 
     </LinearLayout>
 </FrameLayout>
