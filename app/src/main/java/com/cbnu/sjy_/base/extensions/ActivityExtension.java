@@ -1,23 +1,22 @@
-package com.cbnu.sjy_.base;
+package com.cbnu.sjy_.base.extensions;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Handler;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
 import com.cbnu.sjy_.R;
 
 /**
- * @author : Sangji Lee
- * @when : 2019-11-08 오전 12:36
- * @homepage : https://github.com/sangji11
+ * 액티비티의 기본 기능을 추상화 하기 위한 Activity Hierarchy
+ * 이동 후 액티비티 종료 (startActivityAndFinish)와 같이 여러번 호출해야하는 메소드를
+ * 편리하게 한번에 사용하기 위해 구현함
  */
-public abstract class BaseAcitivity extends AppCompatActivity {
+public abstract class ActivityExtension extends AppCompatActivity {
 
-    private Handler handler = new Handler();
-
-    protected void getPermission(String... permisions) {
-        ActivityCompat.requestPermissions(this, permisions, 1);
+    protected void getPermission(String... permissions) {
+        ActivityCompat.requestPermissions(this, permissions, 1);
     }
 
     @Override
@@ -39,9 +38,5 @@ public abstract class BaseAcitivity extends AppCompatActivity {
     public void startActivityAndFinish(Class<? extends Activity> activity) {
         startActivity(activity);
         finish();
-    }
-
-    public Handler getHandler() {
-        return handler;
     }
 }

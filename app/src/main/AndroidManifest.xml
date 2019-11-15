@@ -11,15 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".core.view.SplashView">
+
+        <activity android:name=".core.controller.LoginController">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".core.view.LoginView" />
-        <activity android:name=".core.view.MainView"/>
-        <activity android:name=".core.view.SignUpView"/>
+
+        <activity android:name=".core.controller.MainController" />
+
     </application>
 
 </manifest>

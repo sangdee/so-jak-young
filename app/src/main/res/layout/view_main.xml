@@ -1,40 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".core.view.MainView"
-    tools:showIn="@layout/view_main">
 
-    <FrameLayout
-        android:id="@+id/fragmentBorC"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="MainView">
+
+        <variable
+            name="controller"
+            type="com.cbnu.sjy_.core.controller.MainController" />
+
+        <variable
+            name="viewModel"
+            type="com.cbnu.sjy_.core.viewmodel.MainViewModel" />
+    </data>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+    </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Main"
-        android:textColor="#000000"
-        android:textSize="40sp" />
-
-    <fragment
-        android:id="@+id/fragmentA"
-        class="com.cbnu.sjy_.core.view.fragmentView.FragmentA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Switch Fragment"
-        android:textSize="20sp" />
-
-
-</LinearLayout>
+</layout>

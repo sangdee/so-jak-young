@@ -1,80 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#aabb"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".core.view.SignUpView">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:visibility="gone" />
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#aabb"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".activities.SignupActivity">
+        tools:context=".core.viewmodel.SignUpView">
 
-        <com.cbnu.sjy_.util.TypeWriter
-            android:id="@+id/typeWriterView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+        <ProgressBar
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
-            android:gravity="center"
-            android:textSize="25sp" />
+            android:visibility="gone" />
 
-        <ImageView
-
-            android:id="@+id/signupActivity_imageview_profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="40dp"
-            android:src="@drawable/ic_launcher_background" />
-
-        <EditText
-            android:id="@+id/signupActivity_edittext_email"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="이메일" />
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:context=".activities.SignupActivity">
 
-        <EditText
-            android:id="@+id/signupActivity_edittext_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="이름" />
+            <com.cbnu.sjy_.util.TypeWriter
+                android:id="@+id/typeWriterView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:gravity="center"
+                android:textSize="25sp" />
+
+            <ImageView
+
+                android:id="@+id/signupActivity_imageview_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="40dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <EditText
+                android:id="@+id/signupActivity_edittext_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="이메일" />
+
+            <EditText
+                android:id="@+id/signupActivity_edittext_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="이름" />
 
 
-        <EditText
-            android:id="@+id/signupActivity_edittext_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="패스워드"
-            android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/signupActivity_edittext_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="패스워드"
+                android:inputType="textPassword" />
 
 
-        <TextView
-            android:id="@+id/signupActivity_button_signup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:background="#00000000"
-            android:gravity="center"
-            android:text="회원가입"
-            android:textSize="25sp" />
+            <TextView
+                android:id="@+id/signupActivity_button_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="#00000000"
+                android:gravity="center"
+                android:text="회원가입"
+                android:textSize="25sp" />
 
-    </LinearLayout>
-</FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>
