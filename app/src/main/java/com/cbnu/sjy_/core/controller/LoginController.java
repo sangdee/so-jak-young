@@ -1,5 +1,7 @@
 package com.cbnu.sjy_.core.controller;
 
+import android.view.View;
+
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.base.BaseController;
 import com.cbnu.sjy_.core.logic.AuthLogic;
@@ -26,6 +28,11 @@ public class LoginController extends BaseController<LoginView, LoginViewModel> {
         User user = new User();
         user.setId(viewModel.getId());
         user.setPw(viewModel.getPw());
+        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
         auth.login(user);
+    }
+    public void onSignUpClicked(){
+        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
+        startActivity(SignUpController.class);
     }
 }

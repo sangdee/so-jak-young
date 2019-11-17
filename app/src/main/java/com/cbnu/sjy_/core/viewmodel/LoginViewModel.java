@@ -5,16 +5,13 @@ import androidx.lifecycle.ViewModel;
 
 public class LoginViewModel extends ViewModel {
 
-    private MutableLiveData<String> id;
-    private MutableLiveData<String> pw;
+    private MutableLiveData<String> id = new MutableLiveData<>();
+    private MutableLiveData<String> pw = new MutableLiveData<>();
 
-    public String getId() {
-        return id.getValue();
-    }
 
-    public void setId(String id) {
-        this.id.setValue(id);
-    }
+    public String getId(){ return id.getValue();}
+
+    public void setId(String id) { this.id.setValue(id); }
 
     public String getPw() {
         return pw.getValue();

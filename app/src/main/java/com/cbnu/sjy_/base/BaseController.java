@@ -5,9 +5,9 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.databinding.library.baseAdapters.BR;
 import androidx.lifecycle.ViewModel;
 
-import com.cbnu.sjy_.BR;
 import com.cbnu.sjy_.base.extensions.UIExtension;
 import com.cbnu.sjy_.util.Factory;
 
@@ -27,7 +27,7 @@ public abstract class BaseController<V extends ViewDataBinding, VM extends ViewM
         super.onCreate(savedInstanceState);
         view = DataBindingUtil.setContentView(this, injectView());
         viewModel = Factory.createView(this, injectViewModel());
-        view.setVariable(BR.view, view);
+        view.setVariable(BR.viewModel, viewModel);
         view.setVariable(BR.controller, this);
     }
 

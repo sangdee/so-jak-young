@@ -27,7 +27,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:visibility="gone" />
+            android:visibility="gone"/>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -93,7 +93,8 @@
                 android:gravity="center"
                 android:paddingTop="20dp"
                 android:text="회원가입"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:onClick="@{()->controller.onSignUpClicked()}"/>
         </LinearLayout>
     </FrameLayout>
 </layout>

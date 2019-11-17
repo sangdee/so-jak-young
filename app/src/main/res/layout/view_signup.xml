@@ -2,6 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data class="SignUpView">
+        <variable
+            name="controller"
+            type="com.cbnu.sjy_.core.controller.SignUpController" />
+        <variable
+            name="viewmodel"
+            type="com.cbnu.sjy_.core.viewmodel.SignUpViewModel" />
+    </data>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,6 +21,7 @@
 
 
         <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -44,31 +53,30 @@
                 android:src="@drawable/ic_launcher_background" />
 
             <EditText
-                android:id="@+id/signupActivity_edittext_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="이메일" />
+                android:hint="이메일"
+                android:text="@={viewmodel.id}"/>
 
             <EditText
-                android:id="@+id/signupActivity_edittext_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="이름" />
+                android:hint="이름"
+                android:text="@={viewmodel.name}"/>
 
 
             <EditText
-                android:id="@+id/signupActivity_edittext_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:hint="패스워드"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:text="@={viewmodel.pw}"/>
 
 
             <TextView
-                android:id="@+id/signupActivity_button_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -76,7 +84,8 @@
                 android:background="#00000000"
                 android:gravity="center"
                 android:text="회원가입"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:onClick="@{()->controller.onSignUpFinish()}"/>
 
         </LinearLayout>
     </FrameLayout>
