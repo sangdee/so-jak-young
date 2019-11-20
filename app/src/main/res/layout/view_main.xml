@@ -13,12 +13,73 @@
             type="com.cbnu.sjy_.core.viewmodel.MainViewModel" />
     </data>
 
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@drawable/back3">
 
-    </LinearLayout>
+
+        <LinearLayout
+            onViewCreate="@{()->controller.showInfo()}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/card_view"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                android:paddingStart="100dp"
+                android:paddingEnd="100dp"
+                android:text="소작영"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                android:paddingStart="100dp"
+                android:paddingEnd="100dp"
+                android:text="@{viewModel.id}"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                android:paddingStart="100dp"
+                android:paddingEnd="100dp"
+                android:text="@{viewModel.pw}"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                android:paddingStart="100dp"
+                android:paddingEnd="100dp"
+                android:text="@{viewModel.name}"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </FrameLayout>
 
 </layout>

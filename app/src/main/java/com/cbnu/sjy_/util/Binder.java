@@ -4,6 +4,11 @@ import android.view.View;
 
 import androidx.databinding.BindingAdapter;
 
+/**
+ * @author : Sangji Lee
+ * @when : 2019-11-17 오후 7:16
+ * @homepage : https://github.com/sangji11
+ */
 public class Binder {
 //커스텀 뷰 어트리뷰트를 관리하기 위한 클래스
 

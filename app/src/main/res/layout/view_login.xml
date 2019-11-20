@@ -15,86 +15,185 @@
     <!--@{} : 1way 통신-->
     <!--@={} : 2way 통신-->
 
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:background="#aabb"
-        android:orientation="vertical">
+        android:background="@drawable/back3">
 
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="55dp"
+            android:background="@drawable/card_view"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                android:paddingStart="50dp"
+                android:paddingTop="50dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="120dp"
+                android:text="소•작•영"
+                android:textSize="30sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/email_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="50dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/font"
+                    android:gravity="center"
+                    android:text="E-Mail   "
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewModel.id}" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/pw_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="50dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/font"
+                    android:gravity="center"
+                    android:text="Password"
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.pw}" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="70dp"
+                android:background="#00000000"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                android:onClick="@{()->controller.onLoginClicked()}"
+                android:padding="10dp"
+                android:text="Sign In"
+                android:textSize="25sp" />
+            <LinearLayout
+                android:id="@+id/remember_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:weightSum="10">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={viewModel.stay}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font"
+                    android:gravity="center"
+                    android:text="Stay signed in"
+                    android:textSize="19sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/font"
+                android:gravity="center"
+                android:text="don't you have any account ?"
+                android:textSize="19sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font"
+                    android:gravity="center"
+                    android:text="click "
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font"
+                    android:gravity="center"
+                    android:onClick="@{()->controller.onSignUpClicked()}"
+                    android:text="here"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font"
+                    android:gravity="center"
+                    android:text=" to make an account !"
+                    android:textSize="19sp" />
+
+            </LinearLayout>
+        </LinearLayout>
         <ProgressBar
-            android:id="@+id/progressBar"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:visibility="gone"/>
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".activities.LoginActivity">
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:src="@drawable/ic_launcher_background" />
-
-            <com.cbnu.sjy_.util.TypeWriter
-                android:id="@+id/typeWriterView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:textSize="23sp" />
-
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:hint="아이디"
-                android:text="@={viewModel.id}" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="패스워드"
-                android:inputType="textPassword"
-                android:text="@={viewModel.pw}" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="아이디 저장" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#00000000"
-                android:gravity="center"
-                android:paddingTop="20dp"
-                android:text="로그인"
-                android:onClick="@{()->controller.onLoginClicked()}"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:background="#00000000"
-                android:gravity="center"
-                android:paddingTop="20dp"
-                android:text="회원가입"
-                android:textSize="20sp"
-                android:onClick="@{()->controller.onSignUpClicked()}"/>
-        </LinearLayout>
+            android:visibility="@{viewModel.progressBar}" />
     </FrameLayout>
 </layout>
