@@ -3,7 +3,7 @@ package com.cbnu.sjy_.core.controller;
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.base.controller.BaseController;
 import com.cbnu.sjy_.core.logic.SignUpLogic;
-import com.cbnu.sjy_.core.model.entity.UserEntity;
+import com.cbnu.sjy_.core.model.entity.User;
 import com.cbnu.sjy_.core.viewmodel.SignUpViewModel;
 import com.cbnu.sjy_.databinding.SignUpView;
 import com.cbnu.sjy_.di.Factory;
@@ -28,7 +28,7 @@ public class SignUpController extends BaseController<SignUpView, SignUpViewModel
 
     @OnXML(resid = R.layout.view_signup)
     public void onSignUpFinish() {
-        UserEntity user = new UserEntity();
+        User user = new User();
         user.setId(viewModel.getId().getValue());
         user.setPw(viewModel.getPw().getValue());
         user.setName(viewModel.getName().getValue());

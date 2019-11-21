@@ -4,7 +4,7 @@ import com.cbnu.sjy_.base.controller.BaseController;
 import com.cbnu.sjy_.base.logic.BaseLogic;
 import com.cbnu.sjy_.core.controller.MainController;
 import com.cbnu.sjy_.core.model.cache.UserCache;
-import com.cbnu.sjy_.core.model.entity.UserEntity;
+import com.cbnu.sjy_.core.model.entity.User;
 import com.cbnu.sjy_.util.Data;
 import com.cbnu.sjy_.util.Firebase;
 import com.cbnu.sjy_.util.StringChecker;
@@ -21,7 +21,7 @@ public class LoginLogic extends BaseLogic {
         super(owner);
     }
 
-    private void staySignedIn(Task<AuthResult> task, UserEntity user, Data<Boolean> stay) {
+    private void staySignedIn(Task<AuthResult> task, User user, Data<Boolean> stay) {
         if (task.isSuccessful()) {
             if (stay.getValue()) {
                 preference().setString("id", user.getId());
@@ -36,7 +36,7 @@ public class LoginLogic extends BaseLogic {
     private void addEntityToCache(Task<AuthResult> task) {
         Firebase.reference("user")
                 .child(Firebase.uid())
-                .access(UserEntity.class)
+                .access(User.class)
                 .select(u -> {
                     UserCache.getInstance().copy(u);
                     updateView(task); // 3. Update View
@@ -52,21 +52,20 @@ public class LoginLogic extends BaseLogic {
         }
     }
 
-    public void signIn(UserEntity user, Data<Boolean> stay) {
+    public void signIn(User user, Data<Boolean> stay) {
         String id = user.getId();
         String pw = user.getPw();
         showProgress();
-
         if (StringChecker.isEmpty(id))
             hideAndToast("아이디를 입력해주세요");
         else if (StringChecker.isEmpty(pw))
             hideAndToast("비밀번호를 입력해주세요");
-
         else Firebase.auth()
                     .signInWithEmailAndPassword(id, pw)
                     .addOnCompleteListener(task -> {
                         staySignedIn(task, user, stay); // 1. Stay Processing
                         addEntityToCache(task); // 2. Add Entity To Cache
+
                     });
     }
 }

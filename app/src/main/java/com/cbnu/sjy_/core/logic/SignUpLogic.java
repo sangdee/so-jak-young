@@ -3,7 +3,7 @@ package com.cbnu.sjy_.core.logic;
 import com.cbnu.sjy_.base.controller.BaseController;
 import com.cbnu.sjy_.base.logic.BaseLogic;
 import com.cbnu.sjy_.core.controller.LoginController;
-import com.cbnu.sjy_.core.model.entity.UserEntity;
+import com.cbnu.sjy_.core.model.entity.User;
 import com.cbnu.sjy_.util.Firebase;
 import com.cbnu.sjy_.util.StringChecker;
 import com.google.android.gms.tasks.Task;
@@ -20,11 +20,11 @@ public class SignUpLogic extends BaseLogic {
         super(owner);
     }
 
-    private void insertDatabase(Task<AuthResult> task, UserEntity user) {
+    private void insertDatabase(Task<AuthResult> task, User user) {
         if (task.isSuccessful()) {
             Firebase.reference("user")
                     .child(Firebase.uid())
-                    .access(UserEntity.class)
+                    .access(User.class)
                     .insert(user);
         }
     }
@@ -39,7 +39,7 @@ public class SignUpLogic extends BaseLogic {
         }
     }
 
-    public void signUp(UserEntity user) {
+    public void signUp(User user) {
         String id = user.getId();
         String pw = user.getPw();
         String name = user.getName();
@@ -59,6 +59,7 @@ public class SignUpLogic extends BaseLogic {
                     .addOnCompleteListener(task -> {
                         insertDatabase(task, user);// 1. Insert Database
                         updateView(task); // 2. Update View
+
                     });
     }
 }

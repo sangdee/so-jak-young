@@ -8,7 +8,7 @@ import com.cbnu.sjy_.base.model.BaseEntity;
  * @when : 2019-11-17 오후 7:16
  * @homepage : https://github.com/sangji11
  */
-public class UserEntity extends BaseEntity {
+public class User extends BaseEntity {
     private String id;
     private String pw;
     private String name;

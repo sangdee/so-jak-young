@@ -3,7 +3,7 @@ package com.cbnu.sjy_.core.controller;
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.base.controller.BaseController;
 import com.cbnu.sjy_.core.logic.LoginLogic;
-import com.cbnu.sjy_.core.model.entity.UserEntity;
+import com.cbnu.sjy_.core.model.entity.User;
 import com.cbnu.sjy_.core.viewmodel.LoginViewModel;
 import com.cbnu.sjy_.databinding.LoginView;
 import com.cbnu.sjy_.di.Factory;
@@ -32,7 +32,7 @@ public class LoginController extends BaseController<LoginView, LoginViewModel> {
     @OnXML(resid = R.layout.view_login)
 
     public void onLoginClicked() {
-        UserEntity user = new UserEntity();
+        User user = new User();
         user.setId(viewModel.getId().getValue());
         user.setPw(viewModel.getPw().getValue());
         loginLogic.signIn(user, viewModel.getStay());

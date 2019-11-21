@@ -3,7 +3,7 @@ package com.cbnu.sjy_.core.controller;
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.base.controller.BaseController;
 import com.cbnu.sjy_.core.model.cache.UserCache;
-import com.cbnu.sjy_.core.model.entity.UserEntity;
+import com.cbnu.sjy_.core.model.entity.User;
 import com.cbnu.sjy_.core.viewmodel.MainViewModel;
 import com.cbnu.sjy_.databinding.MainView;
 import com.cbnu.sjy_.util.OnXML;
@@ -26,7 +26,7 @@ public class MainController extends BaseController<MainView, MainViewModel> {
     @OnXML(resid = R.layout.view_main)
     public void showInfo() {
         UserCache cache = UserCache.getInstance();
-        UserEntity user = cache.read();
+        User user = cache.read();
 
         viewModel.getId().setValue(user.getId());
         viewModel.getName().setValue(user.getName());

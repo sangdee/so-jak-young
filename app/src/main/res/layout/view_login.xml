@@ -130,7 +130,6 @@
                 android:orientation="horizontal"
                 android:paddingTop="5dp"
                 android:weightSum="10">
-
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
