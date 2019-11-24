@@ -1,13 +1,13 @@
 package com.cbnu.sjy_.core.logic;
 
-import android.os.Handler;
 
 import com.cbnu.sjy_.base.controller.BaseController;
 import com.cbnu.sjy_.base.logic.BaseLogic;
 import com.cbnu.sjy_.core.controller.LoginController;
 import com.cbnu.sjy_.core.controller.MainController;
-import com.cbnu.sjy_.core.model.cache.UserCache;
+import com.cbnu.sjy_.core.model.entity.Movie;
 import com.cbnu.sjy_.core.model.entity.User;
+import com.cbnu.sjy_.util.Cache;
 import com.cbnu.sjy_.util.Firebase;
 import com.cbnu.sjy_.util.StringChecker;
 import com.google.android.gms.tasks.Task;
@@ -26,8 +26,7 @@ public class SplashLogic extends BaseLogic {
     }
 
     private void moveScreen() {
-        new Handler().postDelayed(() ->
-                moveAndFinish(LoginController.class), 2500);
+        loadMovie(() -> moveAndFinish(LoginController.class));
     }
 
     private void updateView(Task<AuthResult> task) {
@@ -44,16 +43,27 @@ public class SplashLogic extends BaseLogic {
                 .child(Firebase.uid())
                 .access(User.class)
                 .select(u -> {
-                    UserCache.getInstance().copy(u); // copy to cache
+                    Cache.userCache = u;
+                    loadMovie();
                     Firebase.auth() // autonomous signed in
                             .signInWithEmailAndPassword(u.getId(), u.getPw())
                             .addOnCompleteListener(this::updateView);
                 });
     }
 
+    private void loadMovie(Runnable... action) {
+        Firebase.reference("movie")
+                .access(Movie.class)
+                .selectList(m -> {
+                    Cache.movieCache = m;
+                    for (Runnable r : action) {
+                        r.run();
+                    }
+                });
+    }
+
     public void splash() {
         String remembered = preference().getString("id");
-
         if (StringChecker.isEmpty(remembered)) moveScreen();
         else processAutonomousSignIn();
     }

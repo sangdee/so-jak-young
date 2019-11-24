@@ -12,6 +12,15 @@ public class User extends BaseEntity {
     private String id;
     private String pw;
     private String name;
+    private String student_num;
+
+    public String getStudent_num() {
+        return student_num;
+    }
+
+    public void setStudent_num(String student_num) {
+        this.student_num = student_num;
+    }
 
     public String getId() {
         return id;

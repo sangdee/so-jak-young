@@ -3,13 +3,14 @@ package com.cbnu.sjy_.core.logic;
 import com.cbnu.sjy_.base.controller.BaseController;
 import com.cbnu.sjy_.base.logic.BaseLogic;
 import com.cbnu.sjy_.core.controller.MainController;
-import com.cbnu.sjy_.core.model.cache.UserCache;
 import com.cbnu.sjy_.core.model.entity.User;
+import com.cbnu.sjy_.util.Cache;
 import com.cbnu.sjy_.util.Data;
 import com.cbnu.sjy_.util.Firebase;
 import com.cbnu.sjy_.util.StringChecker;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+
 /**
  * @author : Sangji Lee
  * @when : 2019-11-17 오후 7:16
@@ -38,7 +39,7 @@ public class LoginLogic extends BaseLogic {
                 .child(Firebase.uid())
                 .access(User.class)
                 .select(u -> {
-                    UserCache.getInstance().copy(u);
+                    Cache.userCache = u;
                     updateView(task); // 3. Update View
                 });
     }
@@ -60,6 +61,7 @@ public class LoginLogic extends BaseLogic {
             hideAndToast("아이디를 입력해주세요");
         else if (StringChecker.isEmpty(pw))
             hideAndToast("비밀번호를 입력해주세요");
+
         else Firebase.auth()
                     .signInWithEmailAndPassword(id, pw)
                     .addOnCompleteListener(task -> {

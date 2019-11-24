@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="ScreeningView">
+
+        <variable
+            name="controller"
+            type="com.cbnu.sjy_.core.controller.ScreeningController" />
+
+        <variable
+            name="viewmodel"
+            type="com.cbnu.sjy_.core.viewmodel.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        onViewCreate="@{()->controller.showImage()}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{()->controller.showInfo()}"
+            android:scaleType="fitXY"/>
+    </LinearLayout>
+</layout>

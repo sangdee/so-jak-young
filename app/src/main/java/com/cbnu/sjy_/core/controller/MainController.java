@@ -1,12 +1,13 @@
 package com.cbnu.sjy_.core.controller;
 
+import androidx.viewpager.widget.ViewPager;
+
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.base.controller.BaseController;
-import com.cbnu.sjy_.core.model.cache.UserCache;
-import com.cbnu.sjy_.core.model.entity.User;
 import com.cbnu.sjy_.core.viewmodel.MainViewModel;
 import com.cbnu.sjy_.databinding.MainView;
 import com.cbnu.sjy_.util.OnXML;
+import com.cbnu.sjy_.util.ScreeningAdapter;
 
 /**
  * @author : Sangji Lee
@@ -15,21 +16,16 @@ import com.cbnu.sjy_.util.OnXML;
  */
 public class MainController extends BaseController<MainView, MainViewModel> {
 
-    @Override protected int injectView() {
+    @Override
+    protected int injectView() {
         return R.layout.view_main;
-    }
-
-    @Override protected Class<MainViewModel> injectViewModel() {
-        return MainViewModel.class;
     }
 
     @OnXML(resid = R.layout.view_main)
     public void showInfo() {
-        UserCache cache = UserCache.getInstance();
-        User user = cache.read();
-
-        viewModel.getId().setValue(user.getId());
-        viewModel.getName().setValue(user.getName());
-        viewModel.getPw().setValue(user.getPw());
+        ViewPager vpPager = view.viewPager;
+        vpPager.setAdapter(new ScreeningAdapter(getSupportFragmentManager()));
+        view.indicator.setViewPager(vpPager);
     }
 }
+

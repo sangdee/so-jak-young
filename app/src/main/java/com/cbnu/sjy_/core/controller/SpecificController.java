@@ -16,9 +16,4 @@ public class SpecificController extends BaseController<SpecificView, SpecificVie
     protected int injectView() {
         return R.layout.view_spec;
     }
-
-    @Override
-    protected Class<SpecificViewModel> injectViewModel() {
-        return SpecificViewModel.class;
-    }
 }

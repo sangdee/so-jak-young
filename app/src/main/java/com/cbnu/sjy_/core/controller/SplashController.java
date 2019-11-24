@@ -22,11 +22,6 @@ public class SplashController extends BaseController<SplashView, SplashViewModel
         return R.layout.view_splash;
     }
 
-    @Override
-    protected Class<SplashViewModel> injectViewModel() {
-        return SplashViewModel.class;
-    }
-
     @OnXML(resid = R.layout.view_splash)
     public void splash() {
         splashLogic.splash();

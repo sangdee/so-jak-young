@@ -7,11 +7,34 @@ import com.cbnu.sjy_.base.model.BaseEntity;
  * @when : 2019-11-22 오전 12:31
  * @homepage : https://github.com/sangji11
  */
-public class Moive extends BaseEntity {
+public class Movie extends BaseEntity {
+    private int id;
     private String name;
     private String directors;
     private String companys;
-    private String stroy;
+    private String story;
+    private String imageUrl;
+    private boolean screening;
+
+    public Movie(){
+
+    }
+
+    public boolean getScreening() {
+        return screening;
+    }
+
+    public void setScreening(boolean screening) {
+        this.screening = screening;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -37,11 +60,19 @@ public class Moive extends BaseEntity {
         this.companys = companys;
     }
 
-    public String getStroy() {
-        return stroy;
+    public String getStory() {
+        return story;
     }
 
-    public void setStroy(String stroy) {
-        this.stroy = stroy;
+    public void setStory(String story) {
+        this.story = story;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

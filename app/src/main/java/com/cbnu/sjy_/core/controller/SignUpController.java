@@ -22,16 +22,13 @@ public class SignUpController extends BaseController<SignUpView, SignUpViewModel
         return R.layout.view_signup;
     }
 
-    @Override protected Class<SignUpViewModel> injectViewModel() {
-        return SignUpViewModel.class;
-    }
-
     @OnXML(resid = R.layout.view_signup)
     public void onSignUpFinish() {
         User user = new User();
         user.setId(viewModel.getId().getValue());
         user.setPw(viewModel.getPw().getValue());
         user.setName(viewModel.getName().getValue());
+        user.setStudent_num(viewModel.getStudent_num().getValue());
         signUpTask.signUp(user);
     }
 }

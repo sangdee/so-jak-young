@@ -45,6 +45,8 @@ dependencies {
     implementation 'net.sourceforge.streamsupport:streamsupport-atomic:1.6.0'
     implementation 'net.sourceforge.streamsupport:streamsupport-flow:1.6.0'
 
+    implementation 'me.relex:circleindicator:1.2.2'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
 }
 
 

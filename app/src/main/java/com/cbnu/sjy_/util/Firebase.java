@@ -9,6 +9,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 /**
@@ -85,14 +87,35 @@ public final class Firebase {
             reference.setValue(null);
         }
 
+        public void selectList(Consumer<List<T>> after) {
+            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    List<T> list = new ArrayList<>();
+                    for (DataSnapshot o : dataSnapshot.getChildren()) {
+                        list.add(o.getValue(clazz));
+                    }
+                    after.accept(list);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+
         public void select(Consumer<T> after) {
             reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     T t = dataSnapshot.getValue(clazz);
                     after.accept(t);
                 }
 
-                @Override public void onCancelled(@NonNull DatabaseError databaseError) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
             });

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cbnu.sjy_">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -11,12 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name=".core.controller.LoginController"/>
-        <activity android:name=".core.controller.MainController" />
+        <activity android:name=".core.controller.CompleteController" />
+        <activity android:name=".core.controller.LoginController" />
+        <activity android:name=".core.controller.MainController" >
+        </activity>
         <activity android:name=".core.controller.SignUpController" />
-        <activity android:name=".core.controller.SpecificController"/>
-        <activity android:name=".core.controller.ReservationController"/>
+        <activity android:name=".core.controller.SpecificController" />
+        <activity android:name=".core.controller.ReservationController" />
         <activity android:name=".core.controller.SplashController">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

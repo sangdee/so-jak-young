@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.databinding.library.baseAdapters.BR;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.cbnu.sjy_.base.viwemodel.BaseViewModel;
-import com.cbnu.sjy_.di.ViewModelFactory;
+
+import java.lang.reflect.ParameterizedType;
 
 /**
  * @author : Sangji Lee
@@ -27,14 +29,28 @@ public abstract class MVVMController<V extends ViewDataBinding, VM extends BaseV
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         view = DataBindingUtil.setContentView(this, injectView());
-        viewModel = ViewModelFactory.createViewModel(this, injectViewModel());
+        viewModel = createViewModel();
         view.setLifecycleOwner(this);
         view.setVariable(BR.viewModel, viewModel);
-        view.setVariable(BR.controller,this);
+        view.setVariable(BR.controller, this);
     }
 
     protected abstract int injectView();
 
-    protected abstract Class<VM> injectViewModel();
+    private VM createViewModel() {
+        try {
+            String className = ((ParameterizedType) getClass()
+                    .getGenericSuperclass())
+                    .getActualTypeArguments()[1]
+                    .toString()
+                    .split(" ")[1];
+
+            Class<VM> clazz = (Class<VM>) Class.forName(className);
+            ViewModelProvider.NewInstanceFactory factory = new ViewModelProvider.NewInstanceFactory();
+            return new ViewModelProvider(this, factory).get(clazz);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 
 }

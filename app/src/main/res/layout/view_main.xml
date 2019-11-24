@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data class="MainView">
 
@@ -16,67 +17,35 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/back3">
-
+        android:background="@drawable/back3"
+       >
 
         <LinearLayout
             onViewCreate="@{()->controller.showInfo()}"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="60dp"
-            android:background="@drawable/card_view"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:weightSum="10">
 
-            <TextView
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/font"
-                android:gravity="center"
-                android:paddingStart="100dp"
-                android:paddingEnd="100dp"
-                android:text="소작영"
-                android:textSize="35sp" />
-
-            <TextView
-                android:id="@+id/email"
+                android:layout_weight="80"
+                />
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator"
+                app:ci_drawable="@drawable/radius"
+                app:ci_height="7dp"
+                app:ci_width="7dp"
+                app:ci_margin="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:fontFamily="@font/font"
-                android:gravity="center"
-                android:paddingStart="100dp"
-                android:paddingEnd="100dp"
-                android:text="@{viewModel.id}"
-                android:textSize="20sp" />
+                android:layout_height="48dp"/>
 
-            <TextView
-                android:id="@+id/pw"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/font"
-                android:gravity="center"
-                android:paddingStart="100dp"
-                android:paddingEnd="100dp"
-                android:text="@{viewModel.pw}"
-                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/font"
-                android:gravity="center"
-                android:paddingStart="100dp"
-                android:paddingEnd="100dp"
-                android:text="@{viewModel.name}"
-                android:textSize="20sp" />
+
 
 
         </LinearLayout>

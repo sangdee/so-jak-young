@@ -5,30 +5,12 @@ import com.cbnu.sjy_.util.Data;
 
 /**
  * @author : Sangji Lee
- * @when : 2019-11-17 오후 7:16
+ * @when : 2019-11-22 오후 3:36
  * @homepage : https://github.com/sangji11
  */
-public class SignUpViewModel extends BaseViewModel {
-    private Data<String> id = new Data<>();
-    private Data<String> pw = new Data<>();
+public class CompleteViewModel extends BaseViewModel {
     private Data<String> name = new Data<>();
     private Data<String> student_num = new Data<>();
-
-    public Data<String> getId() {
-        return id;
-    }
-
-    public void setId(Data<String> id) {
-        this.id = id;
-    }
-
-    public Data<String> getPw() {
-        return pw;
-    }
-
-    public void setPw(Data<String> pw) {
-        this.pw = pw;
-    }
 
     public Data<String> getName() {
         return name;

@@ -24,11 +24,6 @@ public class LoginController extends BaseController<LoginView, LoginViewModel> {
         return R.layout.view_login;
     }
 
-    @Override
-    protected Class<LoginViewModel> injectViewModel() {
-        return LoginViewModel.class;
-    }
-
     @OnXML(resid = R.layout.view_login)
 
     public void onLoginClicked() {

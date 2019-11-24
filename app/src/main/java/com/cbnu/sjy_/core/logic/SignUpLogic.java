@@ -43,6 +43,7 @@ public class SignUpLogic extends BaseLogic {
         String id = user.getId();
         String pw = user.getPw();
         String name = user.getName();
+        String student_num = user.getStudent_num();
         showProgress();
 
         if (StringChecker.isEmpty(id))
@@ -53,6 +54,8 @@ public class SignUpLogic extends BaseLogic {
             hideAndToast("비밀번호는 최소 6자 이상입니다");
         else if (StringChecker.isEmpty(name))
             hideAndToast("이름을 입력해주세요");
+        else if (StringChecker.isEmpty(student_num))
+            hideAndToast("학번을 입력해주세요");
 
         else Firebase.auth()
                     .createUserWithEmailAndPassword(id, pw)
