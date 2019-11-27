@@ -28,9 +28,7 @@
             android:layout_gravity="center"
             android:background="#3A3A3A"
             android:orientation="vertical"
-
             android:weightSum="1">
-
 
             <TextView
                 android:layout_width="match_parent"
@@ -45,8 +43,8 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.6" />
+                android:layout_height="220dp"
+                />
 
             <me.relex.circleindicator.CircleIndicator
                 android:id="@+id/indicator"
@@ -65,17 +63,16 @@
                 android:textColor="#FFFFFF"
                 android:textSize="15sp" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/row_view"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbarFadeDuration="0"
-                android:scrollbarSize="5dp"
-                android:scrollbarThumbVertical="@android:color/darker_gray"
-                android:scrollbars="vertical"
-               >
+                android:layout_height="match_parent">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/row_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </ScrollView>
+
 
         </LinearLayout>
 

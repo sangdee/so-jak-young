@@ -7,7 +7,9 @@ package com.cbnu.sjy_.core.model.entity;
  */
 public class Item {
     String name;
-    int image;
+    String image;
+
+
 
     public String getName() {
         return name;
@@ -17,15 +19,15 @@ public class Item {
         this.name = name;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public Item(String name, int image) {
+    public Item(String name, String image) {
         super();
         this.name = name;
         this.image = image;
