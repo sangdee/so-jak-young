@@ -26,7 +26,7 @@ import java.util.ArrayList;
  */
 public class MainController extends BaseController<MainView, MainViewModel> {
     private MainLogic mainLogic = Factory.createTask(this, MainLogic.class);
-    private int numOfScreening = 0;
+
     ArrayList<Item> movieList = new ArrayList<>();
 
     @Override
@@ -35,14 +35,12 @@ public class MainController extends BaseController<MainView, MainViewModel> {
     }
 
     @OnXML(resid = R.layout.view_main)
-    public void showInfo() {
+    public void showScreening() {
         ViewPager vpPager = view.viewPager;
         vpPager.setAdapter(new ScreeningAdapter(getSupportFragmentManager()));
         view.indicator.setViewPager(vpPager);
-
         for (Movie m : Cache.movieCache) {
             if (!m.getScreening()) {
-                numOfScreening++;
                 movieList.add(new Item(m.getName(), m.getImageUrl()));
             }
         }
@@ -51,14 +49,14 @@ public class MainController extends BaseController<MainView, MainViewModel> {
     }
 
     private void initViews() {
-
         RecyclerView recyclerView = findViewById(R.id.row_view);
         MainAdapter adapter = new MainAdapter(getApplicationContext(), R.layout.view_rowmain, movieList);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 3);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-
-
     }
-
+    @OnXML(resid = R.layout.view_rowmain)
+    public void showInfo() {
+        startActivity(SpecificController.class);
+    }
 }

@@ -22,7 +22,7 @@
 
 
         <LinearLayout
-            onViewCreate="@{()->controller.showInfo()}"
+            onViewCreate="@{()->controller.showScreening()}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -70,7 +70,9 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/row_view"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+
+                    />
             </ScrollView>
 
 

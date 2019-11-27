@@ -25,15 +25,12 @@ public class SpecificController extends BaseController<SpecificView, SpecificVie
 
     @OnXML(resid = R.layout.view_spec)
     public void showSpec() {
-
         Intent intent = getIntent();
         int id = intent.getExtras().getInt("id");
         Movie movie = Cache.movieCache.get(id);
-
         Glide.with(this)
                 .load(movie.getImageUrl())
                 .into(view.imageView);
-
         viewModel.setStroy(movie.getStory());
         viewModel.setName(movie.getName());
         viewModel.setDirector(movie.getDirectors());
