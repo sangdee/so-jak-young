@@ -1,5 +1,7 @@
 package com.cbnu.sjy_.core.controller;
 
+import android.content.Intent;
+
 import com.bumptech.glide.Glide;
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.base.controller.BaseFragmentController;
@@ -24,17 +26,19 @@ public class ScreeningController extends BaseFragmentController<ScreeningView, M
     @OnXML(resid = R.layout.fragment_screening)
     public void showImage() {
         Movie movie = Cache.movieCache.get(getArguments().getInt("movieId"));
-
         Glide.with(this)
                 .load(movie.getImageUrl())
                 .into(view.imageView);
+
     }
 
     @OnXML(resid = R.layout.fragment_screening)
     public void showInfo() {
-        Movie movie = Cache.movieCache.get(getArguments().getInt("movieId"));
-        getParentController().dialog("영화를 관람하시겠습니까?",
-                movie.getName(),
-                () -> getParentController().toast(movie.getStory()));
+        int movieId = getArguments().getInt("movieId");
+        Intent intent = new Intent(getContext(), SpecificController.class);
+        intent.putExtra("id", movieId);
+        startActivity(intent);
     }
+
 }
+

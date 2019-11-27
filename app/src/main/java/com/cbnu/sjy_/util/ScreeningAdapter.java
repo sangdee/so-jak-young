@@ -25,7 +25,7 @@ public class ScreeningAdapter extends FragmentPagerAdapter {
         super(fm);
 
         for (Movie m : Cache.movieCache) {
-            if (m.getScreening()) {
+            if (m.getScreening() ) {
                 numOfScreening++;
                 ScreeningController screeningController = new ScreeningController();
                 Bundle args = new Bundle();
@@ -33,11 +33,8 @@ public class ScreeningAdapter extends FragmentPagerAdapter {
                 screeningController.setArguments(args);
                 fragments.add(screeningController);
             }
-
         }
     }
-
-
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);

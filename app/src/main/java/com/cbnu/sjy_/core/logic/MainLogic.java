@@ -9,7 +9,13 @@ import com.cbnu.sjy_.base.logic.BaseLogic;
  * @homepage : https://github.com/sangji11
  */
 public class MainLogic extends BaseLogic {
+
     public MainLogic(BaseController owner) {
         super(owner);
     }
-}
+
+
+
+
+        }
+

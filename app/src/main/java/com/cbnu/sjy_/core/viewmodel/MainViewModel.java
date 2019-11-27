@@ -13,6 +13,15 @@ public class MainViewModel extends BaseViewModel {
     private Data<String> id = new Data<>();
     private Data<String> pw = new Data<>();
     private Data<String> name = new Data<>();
+    private Data<String> movieName = new Data<>();
+
+    public void setMovieName(Data<String> movieName) {
+        this.movieName = movieName;
+    }
+
+    public Data<String> getMovieName() {
+        return movieName;
+    }
 
     public Data<String> getId() {
         return id;
