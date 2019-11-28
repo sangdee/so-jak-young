@@ -35,6 +35,6 @@ public class LoginController extends BaseController<LoginView, LoginViewModel> {
 
     @OnXML(resid = R.layout.view_login)
     public void onSignUpClicked() {
-        startActivity(SignUpController.class);
-    }
+    startActivity(SignUpController.class);
+}
 }

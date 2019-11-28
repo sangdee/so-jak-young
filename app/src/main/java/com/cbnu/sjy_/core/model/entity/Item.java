@@ -6,10 +6,13 @@ package com.cbnu.sjy_.core.model.entity;
  * @homepage : https://github.com/sangji11
  */
 public class Item {
-    String name;
-    String image;
+    private String name;
+    private String image;
 
-
+    public Item(String name, String image) {
+        this.name = name;
+        this.image = image;
+    }
 
     public String getName() {
         return name;
@@ -26,12 +29,4 @@ public class Item {
     public void setImage(String image) {
         this.image = image;
     }
-
-    public Item(String name, String image) {
-        super();
-        this.name = name;
-        this.image = image;
-    }
-
-
 }

@@ -16,7 +16,7 @@ import com.cbnu.sjy_.util.OnXML;
  */
 public class SignUpController extends BaseController<SignUpView, SignUpViewModel> {
 
-    private SignUpLogic signUpTask = Factory.createTask(this, SignUpLogic.class);
+    private SignUpLogic signUpLogic = Factory.createTask(this, SignUpLogic.class);
 
     @Override protected int injectView() {
         return R.layout.view_signup;
@@ -29,6 +29,6 @@ public class SignUpController extends BaseController<SignUpView, SignUpViewModel
         user.setPw(viewModel.getPw().getValue());
         user.setName(viewModel.getName().getValue());
         user.setStudent_num(viewModel.getStudent_num().getValue());
-        signUpTask.signUp(user);
+        signUpLogic.signUp(user);
     }
 }
