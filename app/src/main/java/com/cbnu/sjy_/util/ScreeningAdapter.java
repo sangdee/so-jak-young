@@ -32,6 +32,7 @@ public class ScreeningAdapter extends FragmentPagerAdapter {
                 args.putInt("movieId", m.getId());
                 screeningController.setArguments(args);
                 fragments.add(screeningController);
+
             }
         }
     }

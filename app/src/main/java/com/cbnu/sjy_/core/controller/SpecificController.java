@@ -1,6 +1,7 @@
 package com.cbnu.sjy_.core.controller;
 
 import android.content.Intent;
+import android.view.View;
 
 import com.bumptech.glide.Glide;
 import com.cbnu.sjy_.R;
@@ -23,6 +24,7 @@ public class SpecificController extends BaseController<SpecificView, SpecificVie
         return R.layout.view_spec;
     }
 
+
     @OnXML(resid = R.layout.view_spec)
     public void showSpec() {
         Intent intent = getIntent();
@@ -34,6 +36,19 @@ public class SpecificController extends BaseController<SpecificView, SpecificVie
         viewModel.setStroy(movie.getStory());
         viewModel.setName(movie.getName());
         viewModel.setDirector(movie.getDirectors());
+        if (movie.getScreening()) {
+            view.resBtn.setVisibility(View.VISIBLE);
+        } else view.heartButton.setVisibility(View.VISIBLE);
+
+        view.resBtn.setOnClickListener(v -> {
+            Intent intent2 = new Intent(this, ReservationController.class);
+            intent2.putExtra("id", id);
+            startActivity(intent2);
+        });
 
     }
+
+    public void onClickLikeBtn() {
+    }
+
 }

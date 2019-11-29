@@ -28,22 +28,18 @@ public class MainController extends BaseController<MainView, MainViewModel> {
     @OnXML(resid = R.layout.view_main)
     public void showScreening() {
         initViews();
-        onClickedImage();
         ViewPager vpPager = view.viewPager;
         vpPager.setAdapter(new ScreeningAdapter(getSupportFragmentManager()));
         view.indicator.setViewPager(vpPager);
     }
 
     private void initViews() {
-        RecyclerView recyclerView = findViewById(R.id.row_view);
+        RecyclerView recyclerView = view.rowView;
         MainAdapter adapter = new MainAdapter(this, Cache.movieCache);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 3);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-    }
-
-    @OnXML(resid = R.layout.view_rowmain)
-    public void onClickedImage() {
 
     }
+
 }

@@ -23,7 +23,7 @@ public abstract class BaseController<V extends ViewDataBinding, VM extends BaseV
         new AlertDialog.Builder(this)
                 .setTitle(title)
                 .setMessage(msg)
-                .setPositiveButton("확인", (dialog, which) -> positive.run())
+                                .setPositiveButton("확인", (dialog, which) -> positive.run())
                 .setNegativeButton("취소", (dialog, which) -> {
                 })
                 .setCancelable(false)

@@ -14,10 +14,19 @@ public class Movie extends BaseEntity {
     private String companys;
     private String story;
     private String imageUrl;
+    private int like;
     private boolean screening;
 
     public Movie(){
 
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
     }
 
     public boolean getScreening() {

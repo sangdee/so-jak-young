@@ -9,8 +9,17 @@ import com.cbnu.sjy_.util.Data;
  * @homepage : https://github.com/sangji11
  */
 public class CompleteViewModel extends BaseViewModel {
+    private Data<String> movieName = new Data<>();
     private Data<String> name = new Data<>();
     private Data<String> student_num = new Data<>();
+
+    public Data<String> getMovieName() {
+        return movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName.setValue(movieName);
+    }
 
     public Data<String> getName() {
         return name;

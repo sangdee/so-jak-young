@@ -12,4 +12,6 @@ public class ReservationLogic extends BaseLogic {
     public ReservationLogic(BaseController owner) {
         super(owner);
     }
+
+
 }

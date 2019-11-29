@@ -11,10 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.cbnu.sjy_.R;
 import com.cbnu.sjy_.core.controller.SpecificController;
 import com.cbnu.sjy_.core.model.entity.Movie;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +49,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Picasso.with(context)
+        Glide.with(context)
                 .load(movies.get(position).getImageUrl())
                 .into(holder.movie_img);
 
@@ -75,6 +75,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
         ViewHolder(View view) {
             super(view);
+
             movie_name = view.findViewById(R.id.movie_name);
             movie_img = view.findViewById(R.id.movie_img);
         }
