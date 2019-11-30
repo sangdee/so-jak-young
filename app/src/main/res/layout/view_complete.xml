@@ -15,12 +15,13 @@
     </data>
 
     <FrameLayout
+        onViewCreate="@{()->controller.showUser()}"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/back3">
 
-
         <LinearLayout
+            onViewCreate="@{()->controller.show()}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
@@ -58,7 +59,7 @@
                     android:layout_marginTop="30dp"
                     android:fontFamily="@font/font"
                     android:gravity="center"
-                    android:text="viewmodel.name"
+                    android:text="@{viewModel.movieName}"
                     android:textColor="@android:color/black"
                     android:textSize="32dp" />
 
@@ -116,38 +117,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-
+                    android:gravity="center"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/text_number"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/font"
-                        android:text=" 학번 :  "
-                        android:textColor="@android:color/black"
-                        android:textSize="25dp" />
+
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/font"
                         android:text="@{viewModel.student_num}"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/text_person"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/font"
-                        android:text=" 이름 :  "
-                        android:textColor="@android:color/black"
-                        android:textSize="25sp" />
+                        android:textSize="25sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:text=" / "
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/font"
+                        android:textColor="#000000"
                         android:text="@{viewModel.name}"
                         android:textSize="25sp" />
 
@@ -160,13 +157,15 @@
                     android:layout_height="42dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="40dp"
-                    android:background="@drawable/cancel" />
+                    android:background="@drawable/cancel"
+                    android:onClick="@{()->controller.cancel()}" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="45dp"
+                    android:onClick="@{()->controller.confirm()}"
                     android:text="확인"
                     android:textColor="#000000"
                     android:textSize="25sp"

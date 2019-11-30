@@ -9,9 +9,9 @@ import com.cbnu.sjy_.base.controller.BaseController;
 import com.cbnu.sjy_.core.viewmodel.MainViewModel;
 import com.cbnu.sjy_.databinding.MainView;
 import com.cbnu.sjy_.util.Cache;
-import com.cbnu.sjy_.util.MainAdapter;
+import com.cbnu.sjy_.util.adapter.MainAdapter;
 import com.cbnu.sjy_.util.OnXML;
-import com.cbnu.sjy_.util.ScreeningAdapter;
+import com.cbnu.sjy_.util.adapter.ScreeningAdapter;
 
 /**
  * @author : Sangji Lee

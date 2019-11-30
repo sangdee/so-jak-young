@@ -25,16 +25,16 @@ public class CompleteViewModel extends BaseViewModel {
         return name;
     }
 
-    public void setName(Data<String> name) {
-        this.name = name;
+    public void setName(String name) {
+        this.name.setValue(name);
     }
 
     public Data<String> getStudent_num() {
         return student_num;
     }
 
-    public void setStudent_num(Data<String> student_num) {
-        this.name = student_num;
+    public void setStudent_num(String student_num) {
+        this.student_num.setValue(student_num);
     }
 
 }

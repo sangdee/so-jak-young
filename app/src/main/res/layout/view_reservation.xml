@@ -355,7 +355,7 @@
                 android:layout_weight="3.5" />
 
             <Button
-                android:onClick="@{()->controller.onCilckedConfirm()}"
+
                 android:id="@+id/confirm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

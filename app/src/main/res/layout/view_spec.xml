@@ -46,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -55,14 +56,15 @@
                     <TextView
                         android:id="@+id/movieName"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-
+                        android:padding="15dp"
                         android:layout_weight="7"
                         android:fontFamily="@font/font"
                         android:text="@{viewModel.name}"
                         android:textColor="#FFFFFF"
                         android:textSize="25sp" />
+
                     <Button
                         android:id="@+id/res_btn"
                         android:layout_width="wrap_content"
@@ -70,28 +72,32 @@
                         android:layout_weight="1"
                         android:background="@drawable/btn_bg"
                         android:fontFamily="@font/font"
-
+                        android:padding="15dp"
                         android:text="예매하기"
                         android:textColor="#FFFFFF"
                         android:visibility="gone" />
+
+
                     <com.like.LikeButton
+                        android:layout_weight="1"
                         android:id="@+id/heart_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:visibility="gone"
                         app:icon_size="25dp"
                         app:icon_type="heart" />
+
                 </LinearLayout>
             </LinearLayout>
+
             <ImageView
                 android:id="@+id/image_boundary"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
                 app:srcCompat="@drawable/boundary3" />
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

@@ -13,8 +13,7 @@ import com.cbnu.sjy_.core.model.entity.TimeTableItem;
 import com.cbnu.sjy_.core.viewmodel.ReservationViewModel;
 import com.cbnu.sjy_.databinding.ReservationView;
 import com.cbnu.sjy_.util.Cache;
-import com.cbnu.sjy_.util.OnXML;
-import com.cbnu.sjy_.util.TimeTableAdapter;
+import com.cbnu.sjy_.util.adapter.MainAdapter;
 
 /**
  * @author : Sangji Lee
@@ -28,7 +27,7 @@ public class ReservationController extends BaseController<ReservationView, Reser
     }
 
     RecyclerView timetableView1, timetableView2;
-    TimeTableAdapter adapter1, adapter2;
+    MainAdapter.TimeTableAdapter adapter1, adapter2;
     Movie movie;
 
     @Override
@@ -40,6 +39,16 @@ public class ReservationController extends BaseController<ReservationView, Reser
         movie = Cache.movieCache.get(id);
         viewModel.setName(movie.getName());
 
+        view.confirm.setOnClickListener(v -> {
+            dialog("영화를 관람하시겠습니까?",
+                    movie.getName(),
+                    () -> {
+                        Intent intent2 = new Intent(this, CompleteController.class);
+                        intent2.putExtra("id", id);
+                        startActivity(intent2);
+                    });
+
+        });
 
         timetableView1 = findViewById(R.id.timetableView312);
         timetableView2 = findViewById(R.id.timetableView507);
@@ -47,14 +56,14 @@ public class ReservationController extends BaseController<ReservationView, Reser
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         timetableView1.setLayoutManager(layoutManager);
         timetableView2.setLayoutManager(layoutManager2);
-        adapter1 = new TimeTableAdapter(getApplicationContext());
+        adapter1 = new MainAdapter.TimeTableAdapter(getApplicationContext());
         adapter1.addItem(new TimeTableItem("11:00", "20석"));
         adapter1.addItem(new TimeTableItem("12:00", "20석"));
         adapter1.addItem(new TimeTableItem("15:00", "20석"));
         adapter1.addItem(new TimeTableItem("18:00", "20석"));
         adapter1.addItem(new TimeTableItem("21:00", "20석"));
 
-        adapter2 = new TimeTableAdapter(getApplicationContext());
+        adapter2 = new MainAdapter.TimeTableAdapter(getApplicationContext());
         adapter2.addItem(new TimeTableItem("12:00", "18석"));
         adapter2.addItem(new TimeTableItem("18:00", "20석"));
 
@@ -65,13 +74,9 @@ public class ReservationController extends BaseController<ReservationView, Reser
         view.date3.setOnClickListener(v -> view.date3.setSelected(!view.date3.isSelected()));
         view.date4.setOnClickListener(v -> view.date4.setSelected(!view.date4.isSelected()));
 
+
     }
 
 
-    @OnXML(resid = R.layout.view_reservation)
-    public void onCilckedConfirm() {
-        dialog(movie.getName(), movie.getName() + "을 예약하시겠습니까?", () ->
-                startActivity(CompleteController.class));
-    }
 }
 

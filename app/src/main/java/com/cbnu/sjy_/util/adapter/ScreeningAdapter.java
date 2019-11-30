@@ -1,4 +1,4 @@
-package com.cbnu.sjy_.util;
+package com.cbnu.sjy_.util.adapter;
 
 import android.os.Bundle;
 
@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.cbnu.sjy_.core.controller.ScreeningController;
 import com.cbnu.sjy_.core.model.entity.Movie;
+import com.cbnu.sjy_.util.Cache;
 
 import java.util.ArrayList;
 
