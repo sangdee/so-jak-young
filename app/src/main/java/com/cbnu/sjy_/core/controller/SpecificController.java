@@ -49,7 +49,6 @@ public class SpecificController extends BaseController<SpecificView, SpecificVie
     }
 
     public void onClickLikeBtn() {
-
     }
 
 }
