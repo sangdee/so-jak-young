@@ -49,6 +49,8 @@ public class SpecificController extends BaseController<SpecificView, SpecificVie
     }
 
     public void onClickLikeBtn() {
+        Movie movie = new Movie();
+        movie.setLike(1);
     }
 
 }
